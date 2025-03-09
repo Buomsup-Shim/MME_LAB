@@ -5,12 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>우리 연구실</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        h1 { color: #007bff; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #007bff;
+        }
+        nav ul li {
+            margin: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        section {
+            padding: 20px;
+            margin: 20px 0;
+        }
+        section img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        h1 {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>야호</h1>
-    <p>여기에 연구실 소개를 적어보세요!</p>
+
+    <!-- 네비게이션 바 -->
+    <nav>
+        <ul>
+            <li><a href="#intro">소개</a></li>
+            <li><a href="#research">연구</a></li>
+            <li><a href="#contact">연락처</a></li>
+        </ul>
+    </nav>
+
+    <!-- 연구실 소개 섹션 -->
+    <section id="intro">
+        <h1>우리 연구실</h1>
+        <img src="your-lab-image.jpg" alt="연구실 사진">
+        <p>우리 연구실은 다양한 연구 분야를 다루고 있으며, 최신 기술과 방법을 적용하여 혁신적인 연구를 진행하고 있습니다. 연구에 대한 자세한 정보는 아래에서 확인하실 수 있습니다.</p>
+    </section>
+
+    <!-- 연구 섹션 -->
+    <section id="research">
+        <h2>연구</h2>
+        <p>우리 연구실의 주요 연구 분야는 해양 생태학, 기후 변화, 생물 다양성 연구 등입니다. 최신 연구 결과와 프로젝트들은 연구실 소개에서 확인할 수 있습니다.</p>
+        <button onclick="window.location.href='https://example.com/research'">자세히 보기</button>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact">
+        <h2>연락처</h2>
+        <p>이메일: example@lab.com</p>
+        <form action="your_script.php" method="post">
+            <label for="name">이름:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">이메일:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">메시지:</label><br>
+            <textarea id="message" name="message" required></textarea><br><br>
+            <button type="submit">보내기</button>
+        </form>
+    </section>
+
+    <!-- 소셜 미디어 링크 -->
+    <footer>
+        <p>우리 연구실을 팔로우하세요!</p>
+        <a href="https://facebook.com/yourlab" target="_blank">Facebook</a>
+        <a href="https://twitter.com/yourlab" target="_blank">Twitter</a>
+        <a href="https://instagram.com/yourlab" target="_blank">Instagram</a>
+    </footer>
+
 </body>
 </html>
