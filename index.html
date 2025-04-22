@@ -80,55 +80,86 @@
                 opacity: 1;
             }
         }
+        /* 로딩 애니메이션 스타일 */
+        #loader {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #007bff;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 1.5s linear infinite;
+            z-index: 9999;
+            background-color: transparent;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
     </style>
 </head>
 <body>
+    <!-- 로딩 애니메이션 -->
+    <div id="loader"></div>
 
-    <!-- 네비게이션 바 -->
-    <nav>
-        <ul>
-            <li><a href="#intro">소개</a></li>
-            <li><a href="#research">연구</a></li>
-            <li><a href="#contact">연락처</a></li>
-        </ul>
-    </nav>
+    <!-- 본문 전체 -->
+    <div id="content" style="display: none;">
+        <!-- 네비게이션 바 -->
+        <nav>
+            <ul>
+                <li><a href="#intro">소개</a></li>
+                <li><a href="#research">연구</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+        </nav>
 
-    <!-- 연구실 소개 섹션 -->
-    <section id="intro">
-        <h1>우리 연구실</h1>
-        <img src="your-lab-image.jpg" alt="연구실 사진">
-        <p>우리 연구실은 다양한 연구 분야를 다루고 있으며, 최신 기술과 방법을 적용하여 혁신적인 연구를 진행하고 있습니다. 연구에 대한 자세한 정보는 아래에서 확인하실 수 있습니다.</p>
-    </section>
+        <!-- 연구실 소개 섹션 -->
+        <section id="intro">
+            <h1>우리 연구실</h1>
+            <img src="your-lab-image.jpg" alt="연구실 사진">
+            <p>우리 연구실은 다양한 연구 분야를 다루고 있으며, 최신 기술과 방법을 적용하여 혁신적인 연구를 진행하고 있습니다. 연구에 대한 자세한 정보는 아래에서 확인하실 수 있습니다.</p>
+        </section>
 
-    <!-- 연구 섹션 -->
-    <section id="research">
-        <h2>연구</h2>
-        <p>우리 연구실의 주요 연구 분야는 해양 생태학, 기후 변화, 생물 다양성 연구 등입니다. 최신 연구 결과와 프로젝트들은 연구실 소개에서 확인할 수 있습니다.</p>
-        <button onclick="window.location.href='https://example.com/research'">자세히 보기</button>
-    </section>
+        <!-- 연구 섹션 -->
+        <section id="research">
+            <h2>연구</h2>
+            <p>우리 연구실의 주요 연구 분야는 해양 생태학, 기후 변화, 생물 다양성 연구 등입니다. 최신 연구 결과와 프로젝트들은 연구실 소개에서 확인할 수 있습니다.</p>
+            <button onclick="window.location.href='https://example.com/research'">자세히 보기</button>
+        </section>
 
-    <!-- 연락처 섹션 -->
-    <section id="contact">
-        <h2>연락처</h2>
-        <p>이메일: example@lab.com</p>
-        <form action="your_script.php" method="post">
-            <label for="name">이름:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">이메일:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">메시지:</label><br>
-            <textarea id="message" name="message" required></textarea><br><br>
-            <button type="submit">보내기</button>
-        </form>
-    </section>
+        <!-- 연락처 섹션 -->
+        <section id="contact">
+            <h2>연락처</h2>
+            <p>이메일: example@lab.com</p>
+            <form action="your_script.php" method="post">
+                <label for="name">이름:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">이메일:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">메시지:</label><br>
+                <textarea id="message" name="message" required></textarea><br><br>
+                <button type="submit">보내기</button>
+            </form>
+        </section>
 
-    <!-- 소셜 미디어 링크 -->
-    <footer>
-        <p>우리 연구실을 팔로우하세요!</p>
-        <a href="https://facebook.com/yourlab" target="_blank">Facebook</a>
-        <a href="https://twitter.com/yourlab" target="_blank">Twitter</a>
-        <a href="https://instagram.com/yourlab" target="_blank">Instagram</a>
-    </footer>
+        <!-- 소셜 미디어 링크 -->
+        <footer>
+            <p>우리 연구실을 팔로우하세요!</p>
+            <a href="https://facebook.com/yourlab" target="_blank">Facebook</a>
+            <a href="https://twitter.com/yourlab" target="_blank">Twitter</a>
+            <a href="https://instagram.com/yourlab" target="_blank">Instagram</a>
+        </footer>
+    </div>
 
+    <script>
+        window.addEventListener("load", function() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        });
+    </script>
 </body>
 </html>
