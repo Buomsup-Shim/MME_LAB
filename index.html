@@ -1,199 +1,3 @@
-<!-- 📄 index.html -->
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marine Molecular Ecology LAB</title>
-  <style>
-    :root {
-      --primary-color: #000;
-      --accent-color: #007bff;
-      --bg-color: #fff;
-      --text-color: #111;
-      --gray-color: #555;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    nav {
-      background-color: var(--bg-color);
-      padding: 20px 40px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav .logo {
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    nav ul {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: var(--text-color);
-      font-weight: 500;
-      font-size: 16px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 150px 20px 80px;
-    }
-
-    .hero h1 {
-      font-size: 56px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInUp 1s ease-out forwards;
-    }
-
-    .hero p {
-      font-size: 22px;
-      color: var(--gray-color);
-      max-width: 600px;
-      margin: 0 auto 40px;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInUp 1.2s ease-out forwards;
-    }
-
-    .hero button {
-      padding: 14px 32px;
-      font-size: 18px;
-      background: var(--text-color);
-      color: white;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .hero button:hover {
-      background: #444;
-    }
-
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 80px 20px;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      width: 300px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    }
-
-    .card img {
-      width: 100%;
-      display: block;
-    }
-
-    .card-title {
-      font-size: 18px;
-      font-weight: 600;
-      text-align: center;
-      padding: 16px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: #f8f9fa;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: var(--accent-color);
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <div class="logo">MME LAB</div>
-    <ul>
-      <li><a href="#intro">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="#members">Members</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-    </ul>
-  </nav>
-
-  <div class="hero">
-    <h1>Marine Molecular Ecology Lab</h1>
-    <p>해양생물의 분자적 특성으로 기후변화에 대응하는 생태 및 생리 메커니즘을 탐구합니다.</p>
-    <button onclick="document.getElementById('intro').scrollIntoView({behavior: 'smooth'});">더 알아보기</button>
-  </div>
-
-  <div class="cards">
-    <div class="card" onclick="location.href='research.html'">
-      <img src="images/research.png" alt="Research">
-      <div class="card-title">Research</div>
-    </div>
-    <div class="card" onclick="location.href='team.html'">
-      <img src="images/members.png" alt="Members">
-      <div class="card-title">Members</div>
-    </div>
-    <div class="card" onclick="location.href='contact.html'">
-      <img src="images/contact.png" alt="Contact">
-      <div class="card-title">Contact us</div>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2024 Marine Molecular Ecology Lab.</p>
-    <a href="#">Facebook</a>
-    <a href="#">Twitter</a>
-    <a href="#">Instagram</a>
-  </footer>
-</body>
-</html>
-
-
-<!-- 📄 research.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -209,6 +13,7 @@
       padding: 0;
       line-height: 1.6;
     }
+
     header {
       background-color: #f5f5f7;
       padding: 20px 40px;
@@ -217,48 +22,75 @@
       align-items: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
+
     header .logo {
       font-weight: bold;
       font-size: 20px;
+      color: #007bff;
     }
+
     header nav ul {
       list-style: none;
       display: flex;
       gap: 20px;
+      margin: 0;
     }
+
     header nav ul li a {
       text-decoration: none;
       color: #333;
       font-weight: 500;
+      transition: color 0.3s;
     }
+
+    header nav ul li a:hover {
+      color: #007bff;
+    }
+
     .content {
       max-width: 960px;
       margin: 0 auto;
       padding: 60px 20px;
     }
+
     .content h1 {
       font-size: 36px;
       text-align: center;
       margin-bottom: 40px;
+      font-weight: 700;
     }
+
     .paper {
       margin-bottom: 40px;
       border-left: 4px solid #007bff;
       padding-left: 20px;
     }
+
     .paper h2 {
       font-size: 20px;
       margin-bottom: 5px;
+      font-weight: bold;
     }
+
     .paper p {
       font-size: 16px;
       color: #555;
     }
+
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 40px 20px;
       background-color: #f8f9fa;
       font-size: 14px;
+      color: #666;
+      border-top: 1px solid #e2e2e2;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
     }
   </style>
 </head>
@@ -277,18 +109,21 @@
 
   <div class="content">
     <h1>Research & Publications</h1>
+
     <div class="paper">
       <h2>Genomic insights into marine adaptation mechanisms under climate change</h2>
       <p><strong>Author:</strong> Buomsup Shim et al. (2024)<br>
       <strong>Journal:</strong> Marine Ecology Progress Series<br>
       This study explores how marine species adapt genetically to ocean warming and acidification using transcriptome and epigenome analysis.</p>
     </div>
+
     <div class="paper">
       <h2>Microbiome shifts in estuarine fish under environmental stressors</h2>
       <p><strong>Author:</strong> J. Kim, H. Park, B. Shim (2023)<br>
       <strong>Journal:</strong> Environmental Microbiology<br>
       An investigation of microbiome changes in fish guts from estuarine environments affected by pollutants and salinity fluctuations.</p>
     </div>
+
     <div class="paper">
       <h2>DNA metabarcoding for biodiversity assessment in coastal lagoons</h2>
       <p><strong>Author:</strong> Y. Lee, B. Shim (2022)<br>
@@ -298,7 +133,12 @@
   </div>
 
   <footer>
-    &copy; 2025 Marine Molecular Ecology Lab
+    <p>&copy; 2025 Marine Molecular Ecology Lab. All rights reserved.</p>
+    <div>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
   </footer>
 </body>
 </html>
