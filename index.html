@@ -29,17 +29,24 @@
 
     nav {
       background-color: var(--bg-color);
-      padding: 20px 0;
+      padding: 20px 40px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
       z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-size: 20px;
+      font-weight: bold;
     }
 
     nav ul {
       display: flex;
-      justify-content: center;
-      gap: 40px;
+      gap: 30px;
       list-style: none;
     }
 
@@ -47,7 +54,7 @@
       text-decoration: none;
       color: var(--text-color);
       font-weight: 500;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .hero {
@@ -89,16 +96,38 @@
       background: #444;
     }
 
-    section {
-      max-width: 960px;
-      margin: 0 auto;
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
       padding: 80px 20px;
+      flex-wrap: wrap;
     }
 
-    section img {
-      max-width: 100%;
+    .card {
+      width: 300px;
       border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      padding: 16px;
     }
 
     footer {
@@ -124,25 +153,17 @@
         transform: translateY(0);
       }
     }
-
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(60px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .scroll-reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
   </style>
 </head>
 <body>
   <nav>
+    <div class="logo">MME LAB</div>
     <ul>
       <li><a href="#intro">소개</a></li>
       <li><a href="#research">연구</a></li>
       <li><a href="#contact">연락처</a></li>
+      <li><a href="#members">구성원</a></li>
+      <li><a href="#gallery">갤러리</a></li>
     </ul>
   </nav>
 
@@ -152,51 +173,26 @@
     <button onclick="document.getElementById('intro').scrollIntoView({behavior: 'smooth'});">더 알아보기</button>
   </div>
 
-  <section id="intro" class="scroll-reveal">
-    <h2>우리 연구실</h2>
-    <p>우리 연구실은 다양한 해양 생태 및 유전체 연구를 통해 해양 생물의 다양성과 환경 적응 메커니즘을 밝히는 데 기여하고 있습니다.</p>
-    <img src="your-lab-image.jpg" alt="연구실 이미지">
-  </section>
-
-  <section id="research" class="scroll-reveal">
-    <h2>연구 분야</h2>
-    <p>주요 연구는 해양 생태학, 기후 변화, 생물다양성 및 DNA 메타바코딩에 중점을 두고 있으며, 최신 생물정보학 기법을 접목하여 진행됩니다.</p>
-  </section>
-
-  <section id="contact" class="scroll-reveal">
-    <h2>연락처</h2>
-    <p>문의: example@lab.com</p>
-    <form action="your_script.php" method="post">
-      <input type="text" name="name" placeholder="이름" required><br><br>
-      <input type="email" name="email" placeholder="이메일" required><br><br>
-      <textarea name="message" placeholder="메시지" required></textarea><br><br>
-      <button type="submit">보내기</button>
-    </form>
-  </section>
+  <div class="cards">
+    <div class="card" onclick="location.href='research.html'">
+      <img src="/mnt/data/81481cae-f722-464a-849d-c19a0ba9e430.png" alt="연구 소개">
+      <div class="card-title">연구 분야</div>
+    </div>
+    <div class="card" onclick="location.href='team.html'">
+      <img src="/mnt/data/6c481a65-d6e7-40e6-a571-f9b1b6de5315.png" alt="구성원 소개">
+      <div class="card-title">우리 팀</div>
+    </div>
+    <div class="card" onclick="location.href='contact.html'">
+      <img src="https://via.placeholder.com/300x200/007bff/ffffff?text=Contact+Us" alt="연락처">
+      <div class="card-title">문의하기</div>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2025 Marine Molecular Ecology Lab</p>
-    <a href="https://facebook.com/yourlab" target="_blank">Facebook</a>
-    <a href="https://twitter.com/yourlab" target="_blank">Twitter</a>
-    <a href="https://instagram.com/yourlab" target="_blank">Instagram</a>
+    <a href="#">Facebook</a>
+    <a href="#">Twitter</a>
+    <a href="#">Instagram</a>
   </footer>
-
-  <script>
-    // 스크롤 애니메이션 트리거
-    const reveals = document.querySelectorAll('.scroll-reveal');
-
-    function handleScroll() {
-      const triggerBottom = window.innerHeight * 0.85;
-      reveals.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < triggerBottom) {
-          el.classList.add('visible');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('load', handleScroll);
-  </script>
 </body>
 </html>
