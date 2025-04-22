@@ -15,35 +15,45 @@
     }
 
     header {
-      background-color: #f5f5f7;
-      padding: 20px 40px;
+      background-color: #ffffff;
+      padding: 40px 60px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      border-bottom: 1px solid #e5e5e5;
     }
 
-    header .logo {
-      font-weight: bold;
-      font-size: 20px;
-      color: #007bff;
-    }
-
-    header nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
+    header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #000;
       margin: 0;
     }
 
-    header nav ul li a {
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #ffffff;
+      padding: 10px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
       text-decoration: none;
       color: #333;
       font-weight: 500;
       transition: color 0.3s;
     }
 
-    header nav ul li a:hover {
+    nav ul li a:hover {
       color: #007bff;
     }
 
@@ -53,7 +63,7 @@
       padding: 60px 20px;
     }
 
-    .content h1 {
+    .content h2 {
       font-size: 36px;
       text-align: center;
       margin-bottom: 40px;
@@ -66,7 +76,7 @@
       padding-left: 20px;
     }
 
-    .paper h2 {
+    .paper h3 {
       font-size: 20px;
       margin-bottom: 5px;
       font-weight: bold;
@@ -96,36 +106,37 @@
 </head>
 <body>
   <header>
-    <div class="logo">MME LAB</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="team.html">Members</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <h1>Marine Molecular Ecology LAB</h1>
   </header>
 
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="team.html">Members</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
   <div class="content">
-    <h1>Research & Publications</h1>
+    <h2>Research & Publications</h2>
 
     <div class="paper">
-      <h2>Genomic insights into marine adaptation mechanisms under climate change</h2>
+      <h3>Genomic insights into marine adaptation mechanisms under climate change</h3>
       <p><strong>Author:</strong> Buomsup Shim et al. (2024)<br>
       <strong>Journal:</strong> Marine Ecology Progress Series<br>
       This study explores how marine species adapt genetically to ocean warming and acidification using transcriptome and epigenome analysis.</p>
     </div>
 
     <div class="paper">
-      <h2>Microbiome shifts in estuarine fish under environmental stressors</h2>
+      <h3>Microbiome shifts in estuarine fish under environmental stressors</h3>
       <p><strong>Author:</strong> J. Kim, H. Park, B. Shim (2023)<br>
       <strong>Journal:</strong> Environmental Microbiology<br>
       An investigation of microbiome changes in fish guts from estuarine environments affected by pollutants and salinity fluctuations.</p>
     </div>
 
     <div class="paper">
-      <h2>DNA metabarcoding for biodiversity assessment in coastal lagoons</h2>
+      <h3>DNA metabarcoding for biodiversity assessment in coastal lagoons</h3>
       <p><strong>Author:</strong> Y. Lee, B. Shim (2022)<br>
       <strong>Journal:</strong> Frontiers in Marine Science<br>
       A comprehensive study applying eDNA metabarcoding techniques to monitor biodiversity shifts in semi-enclosed lagoon systems.</p>
