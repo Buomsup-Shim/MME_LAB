@@ -1,165 +1,202 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marine Molecular Ecology LAB</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            margin: 0;
-            padding: 0;
-        }
-        h1, h2 {
-            text-align: center;
-            color: #007bff;
-        }
-        p {
-            text-align: center;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            background-color: #007bff;
-        }
-        nav ul li {
-            margin: 10px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        section {
-            padding: 20px;
-            margin: 20px 0;
-        }
-        section img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto;
-        }
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-        }
-        footer a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #007bff;
-        }
-        h1 {
-            animation: fadeIn 2s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        /* 로딩 애니메이션 스타일 */
-        #loader {
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            border: 16px solid #f3f3f3;
-            border-top: 16px solid #007bff;
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            animation: spin 1.5s linear infinite;
-            z-index: 9999;
-            background-color: transparent;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marine Molecular Ecology LAB</title>
+  <style>
+    :root {
+      --primary-color: #000;
+      --accent-color: #007bff;
+      --bg-color: #fff;
+      --text-color: #111;
+      --gray-color: #555;
+    }
 
-        @keyframes spin {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-    </style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background-color: var(--bg-color);
+      padding: 20px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 150px 20px 80px;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .hero p {
+      font-size: 22px;
+      color: var(--gray-color);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
+
+    .hero button {
+      padding: 14px 32px;
+      font-size: 18px;
+      background: var(--text-color);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .hero button:hover {
+      background: #444;
+    }
+
+    section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    section img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #f8f9fa;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--accent-color);
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
-    <!-- 로딩 애니메이션 -->
-    <div id="loader"></div>
+  <nav>
+    <ul>
+      <li><a href="#intro">소개</a></li>
+      <li><a href="#research">연구</a></li>
+      <li><a href="#contact">연락처</a></li>
+    </ul>
+  </nav>
 
-    <!-- 본문 전체 -->
-    <div id="content" style="display: none;">
-        <!-- 네비게이션 바 -->
-        <nav>
-            <ul>
-                <li><a href="#intro">소개</a></li>
-                <li><a href="#research">연구</a></li>
-                <li><a href="#contact">연락처</a></li>
-            </ul>
-        </nav>
+  <div class="hero">
+    <h1>Marine Molecular Ecology Lab</h1>
+    <p>유전자와 해양의 연결고리를 탐구하는 혁신적 연구실</p>
+    <button onclick="document.getElementById('intro').scrollIntoView({behavior: 'smooth'});">더 알아보기</button>
+  </div>
 
-        <!-- 연구실 소개 섹션 -->
-        <section id="intro">
-            <h1>우리 연구실</h1>
-            <img src="your-lab-image.jpg" alt="연구실 사진">
-            <p>우리 연구실은 다양한 연구 분야를 다루고 있으며, 최신 기술과 방법을 적용하여 혁신적인 연구를 진행하고 있습니다. 연구에 대한 자세한 정보는 아래에서 확인하실 수 있습니다.</p>
-        </section>
+  <section id="intro" class="scroll-reveal">
+    <h2>우리 연구실</h2>
+    <p>우리 연구실은 다양한 해양 생태 및 유전체 연구를 통해 해양 생물의 다양성과 환경 적응 메커니즘을 밝히는 데 기여하고 있습니다.</p>
+    <img src="your-lab-image.jpg" alt="연구실 이미지">
+  </section>
 
-        <!-- 연구 섹션 -->
-        <section id="research">
-            <h2>연구</h2>
-            <p>우리 연구실의 주요 연구 분야는 해양 생태학, 기후 변화, 생물 다양성 연구 등입니다. 최신 연구 결과와 프로젝트들은 연구실 소개에서 확인할 수 있습니다.</p>
-            <button onclick="window.location.href='https://example.com/research'">자세히 보기</button>
-        </section>
+  <section id="research" class="scroll-reveal">
+    <h2>연구 분야</h2>
+    <p>주요 연구는 해양 생태학, 기후 변화, 생물다양성 및 DNA 메타바코딩에 중점을 두고 있으며, 최신 생물정보학 기법을 접목하여 진행됩니다.</p>
+  </section>
 
-        <!-- 연락처 섹션 -->
-        <section id="contact">
-            <h2>연락처</h2>
-            <p>이메일: example@lab.com</p>
-            <form action="your_script.php" method="post">
-                <label for="name">이름:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-                <label for="email">이메일:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="message">메시지:</label><br>
-                <textarea id="message" name="message" required></textarea><br><br>
-                <button type="submit">보내기</button>
-            </form>
-        </section>
+  <section id="contact" class="scroll-reveal">
+    <h2>연락처</h2>
+    <p>문의: example@lab.com</p>
+    <form action="your_script.php" method="post">
+      <input type="text" name="name" placeholder="이름" required><br><br>
+      <input type="email" name="email" placeholder="이메일" required><br><br>
+      <textarea name="message" placeholder="메시지" required></textarea><br><br>
+      <button type="submit">보내기</button>
+    </form>
+  </section>
 
-        <!-- 소셜 미디어 링크 -->
-        <footer>
-            <p>우리 연구실을 팔로우하세요!</p>
-            <a href="https://facebook.com/yourlab" target="_blank">Facebook</a>
-            <a href="https://twitter.com/yourlab" target="_blank">Twitter</a>
-            <a href="https://instagram.com/yourlab" target="_blank">Instagram</a>
-        </footer>
-    </div>
+  <footer>
+    <p>&copy; 2025 Marine Molecular Ecology Lab</p>
+    <a href="https://facebook.com/yourlab" target="_blank">Facebook</a>
+    <a href="https://twitter.com/yourlab" target="_blank">Twitter</a>
+    <a href="https://instagram.com/yourlab" target="_blank">Instagram</a>
+  </footer>
 
-    <script>
-        window.addEventListener("load", function() {
-            document.getElementById("loader").style.display = "none";
-            document.getElementById("content").style.display = "block";
-        });
-    </script>
+  <script>
+    // 스크롤 애니메이션 트리거
+    const reveals = document.querySelectorAll('.scroll-reveal');
+
+    function handleScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < triggerBottom) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', handleScroll);
+  </script>
 </body>
 </html>
