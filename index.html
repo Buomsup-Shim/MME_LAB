@@ -1,10 +1,11 @@
+<!-- 📄 index.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marine Molecular Ecology LAB</title>
-  <style>ㄴ
+  <style>
     :root {
       --primary-color: #000;
       --accent-color: #007bff;
@@ -144,14 +145,8 @@
     }
 
     @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -160,7 +155,7 @@
     <div class="logo">MME LAB</div>
     <ul>
       <li><a href="#intro">Home</a></li>
-      <li><a href="#research">Research</a></li>
+      <li><a href="research.html">Research</a></li>
       <li><a href="#members">Members</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#gallery">Gallery</a></li>
@@ -169,21 +164,21 @@
 
   <div class="hero">
     <h1>Marine Molecular Ecology Lab</h1>
-    <p>저희 해양분자생태학 연구실은 해양생물의 유전자, 전사체, 후성유전체, 마이크로바이옴 등 다양한 분자적 특성을 이용하여 기후변화 및 환경오염이 해양생태계에 끼치는 생태학적, 진화적, 생리적 영향을 규명하는 연구를 진행하고 있습니다.</p>
+    <p>해양생물의 분자적 특성으로 기후변화에 대응하는 생태 및 생리 메커니즘을 탐구합니다.</p>
     <button onclick="document.getElementById('intro').scrollIntoView({behavior: 'smooth'});">더 알아보기</button>
   </div>
 
   <div class="cards">
     <div class="card" onclick="location.href='research.html'">
-      <img src="/mnt/data/81481cae-f722-464a-849d-c19a0ba9e430.png" alt="Research">
+      <img src="images/research.png" alt="Research">
       <div class="card-title">Research</div>
     </div>
     <div class="card" onclick="location.href='team.html'">
-      <img src="/mnt/data/6c481a65-d6e7-40e6-a571-f9b1b6de5315.png" alt="Members">
+      <img src="images/members.png" alt="Members">
       <div class="card-title">Members</div>
     </div>
     <div class="card" onclick="location.href='contact.html'">
-      <img src="https://via.placeholder.com/300x200/007bff/ffffff?text=Contact+Us" alt="Contact us">
+      <img src="images/contact.png" alt="Contact">
       <div class="card-title">Contact us</div>
     </div>
   </div>
@@ -193,6 +188,117 @@
     <a href="#">Facebook</a>
     <a href="#">Twitter</a>
     <a href="#">Instagram</a>
+  </footer>
+</body>
+</html>
+
+
+<!-- 📄 research.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research | Marine Molecular Ecology LAB</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #ffffff;
+      color: #111;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #f5f5f7;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    header .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    header nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    .content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    .content h1 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .paper {
+      margin-bottom: 40px;
+      border-left: 4px solid #007bff;
+      padding-left: 20px;
+    }
+    .paper h2 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .paper p {
+      font-size: 16px;
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #f8f9fa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">MME LAB</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="team.html">Members</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    <h1>Research & Publications</h1>
+    <div class="paper">
+      <h2>Genomic insights into marine adaptation mechanisms under climate change</h2>
+      <p><strong>Author:</strong> Buomsup Shim et al. (2024)<br>
+      <strong>Journal:</strong> Marine Ecology Progress Series<br>
+      This study explores how marine species adapt genetically to ocean warming and acidification using transcriptome and epigenome analysis.</p>
+    </div>
+    <div class="paper">
+      <h2>Microbiome shifts in estuarine fish under environmental stressors</h2>
+      <p><strong>Author:</strong> J. Kim, H. Park, B. Shim (2023)<br>
+      <strong>Journal:</strong> Environmental Microbiology<br>
+      An investigation of microbiome changes in fish guts from estuarine environments affected by pollutants and salinity fluctuations.</p>
+    </div>
+    <div class="paper">
+      <h2>DNA metabarcoding for biodiversity assessment in coastal lagoons</h2>
+      <p><strong>Author:</strong> Y. Lee, B. Shim (2022)<br>
+      <strong>Journal:</strong> Frontiers in Marine Science<br>
+      A comprehensive study applying eDNA metabarcoding techniques to monitor biodiversity shifts in semi-enclosed lagoon systems.</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Marine Molecular Ecology Lab
   </footer>
 </body>
 </html>
