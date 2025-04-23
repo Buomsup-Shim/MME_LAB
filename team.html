@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Members | Marine Molecular Ecology LAB</title>
   <style>
+    :root {
+      --accent-color: #007bff;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background-color: #fff;
       color: #111;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
     }
 
-    nav {
+    nav, footer {
       background-color: #fff;
       padding: 20px 40px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -46,45 +49,64 @@
     }
 
     nav ul li a:hover {
-      transform: scale(1.1);
-      color: #007bff;
+      transform: scale(1.2);
+      color: var(--accent-color);
     }
 
-    .content {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 80px 20px;
+    .member-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
     }
 
-    .content h1 {
-      font-size: 36px;
+    .member-card {
+      width: 240px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      padding: 20px;
       text-align: center;
-      margin-bottom: 60px;
+      transition: transform 0.3s ease;
     }
 
-    .member {
-      margin-bottom: 30px;
-      padding-left: 20px;
-      border-left: 5px solid #007bff;
+    .member-card:hover {
+      transform: translateY(-6px);
     }
 
-    .member h2 {
-      font-size: 20px;
-      margin-bottom: 5px;
+    .member-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
-    .member p {
-      font-size: 16px;
+    .member-card h3 {
+      margin: 16px 0 4px;
+      font-size: 18px;
+    }
+
+    .member-card .title {
+      font-size: 14px;
+      color: var(--accent-color);
+      margin-bottom: 8px;
+    }
+
+    .member-card .desc {
+      font-size: 14px;
       color: #555;
     }
 
     footer {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #f8f9fa;
-      font-size: 14px;
-      color: #666;
+      justify-content: center;
       border-top: 1px solid #ddd;
+      background-color: #f8f9fa;
+      color: #666;
+      font-size: 14px;
+      padding: 30px;
     }
   </style>
 </head>
@@ -100,34 +122,29 @@
     </ul>
   </nav>
 
-  <div class="content">
-  <h1>Our team</h1>
-
-  <!-- 지도 교수님 소개 -->
-  <div class="member pi" style="margin-bottom: 50px;">
-    <h2>Young Hwan Lee</h2>
-    <p>Professor – Marine Molecular Ecology, Marine Genomics, Marine Ecophysiology, Epigenetics.</p>
+  <div class="member-grid">
+    <div class="member-card">
+      <img src="https://via.placeholder.com/240x240.png?text=Buomsup+Shim" alt="Buomsup Shim">
+      <h3>Epigenetic</h3>
+      <p class="title">NOP</p>
+      <p class="desc">NOP</p>
+    </div>
+    <div class="member-card">
+      <img src="https://via.placeholder.com/240x240.png?text=Heamin+Yoon" alt="Heamin Yoon">
+      <h3>Environmental DNA</h3>
+      <p class="title">NOP</p>
+      <p class="desc">NOP</p>
+    </div>
+    <div class="member-card">
+      <img src="https://via.placeholder.com/240x240.png?text=Jun+Hyeon+An" alt="Jun Hyeon An">
+      <h3>Ecotoxicology</h3>
+      <p class="title">NOP</p>
+      <p class="desc">NOP</p>
+    </div>
   </div>
-
-  <!-- 멤버 리스트 -->
-  <div class="member">
-    <h2>Buom sup Shim</h2>
-    <p>Ph.D. student – eDNA, Biodiversity, Micropalstics, Microbiome, Zooplankton, Copepoda, Rotifera.</p>
-  </div>
-
-  <div class="member">
-    <h2>Hea min Yoon</h2>
-    <p>Master's Student – Epigenetics, Zooplankton, Microalgae, Macroalgae.</p>
-  </div>
-
-  <div class="member">
-    <h2>Jun Hyeon An</h2>
-    <p>Master's Student – Marine medaka, Toxicology, Marine Ecophysiology.</p>
-  </div>
-</div>
 
   <footer>
-    &copy; 2025 Marine Molecular Ecology Lab. All rights reserved.
+    &copy; 2024 Marine Molecular Ecology Lab. All rights reserved.
   </footer>
 </body>
 </html>
