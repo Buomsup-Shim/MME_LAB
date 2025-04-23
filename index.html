@@ -34,13 +34,18 @@
     nav {
       background-color: var(--bg-color);
       padding: 20px 40px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    nav.scrolled {
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     nav .logo {
@@ -169,11 +174,11 @@
   </style>
 </head>
 <body>
-  <nav>
+  <nav id="navbar">
     <div class="logo">MME LAB</div>
     <ul>
       <li><a href="#intro">Home</a></li>
-      <li><a href="#research">Research</a></li>
+      <li><a href="research.html">Research</a></li>
       <li><a href="#members">Members</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#gallery">Gallery</a></li>
@@ -207,5 +212,16 @@
     <a href="#">Twitter</a>
     <a href="#">Instagram</a>
   </footer>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 10) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 </html>
