@@ -53,10 +53,19 @@
       font-weight: bold;
     }
 
+    nav .logo a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     nav ul {
       display: flex;
       gap: 30px;
       list-style: none;
+    }
+
+    nav ul li {
+      position: relative;
     }
 
     nav ul li a {
@@ -73,14 +82,42 @@
       color: var(--accent-color);
     }
 
+    nav ul li .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      min-width: 160px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 1001;
+      border-radius: 8px;
+    }
+
+    nav ul li .dropdown-menu li {
+      padding: 10px 16px;
+      white-space: nowrap;
+    }
+
+    nav ul li .dropdown-menu li a {
+      color: var(--text-color);
+      text-decoration: none;
+      display: block;
+    }
+
+    nav ul li:hover .dropdown-menu {
+      display: flex;
+    }
+
     .hero {
       text-align: center;
       padding: 150px 20px 80px;
-      background-size: cover;          /* 🎯 */
-      background-position: center;     /* 🎯 */
-      background-repeat: no-repeat;    /* 🎯 */
-      transition: background-image 1.5s ease-in-out;  /* 🎯 */
-      min-height: 100vh;               /* 🎯 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 1.5s ease-in-out;
+      min-height: 100vh;
     }
 
     .hero h1 {
@@ -180,23 +217,53 @@
 </head>
 <body>
   <nav id="navbar">
-    <div class="logo">MME LAB</div>
+    <div class="logo"><a href="index.html">MME LAB</a></div>
     <ul>
-      <li><a href="Aboutus.html">About us</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="team.html">Members</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
+      <li class="dropdown">
+        <a href="Aboutus.html">About us</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">History</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="research.html">Research</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Publications</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="team.html">Members</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Faculty</a></li>
+          <li><a href="#">Students</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="contact.html">Contact</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Location</a></li>
+          <li><a href="#">Inquiries</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="gallery.html">Gallery</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Photos</a></li>
+          <li><a href="#">Videos</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
-<div class="hero" id="intro">
-  <div class="hero-content">
-    <h1>Marine Molecular Ecology Lab</h1>
-    <p>해양분자생태학 연구실은 ...</p>
-    <button>More</button>
+  <div class="hero" id="intro">
+    <div class="hero-content">
+      <h1>Marine Molecular Ecology Lab</h1>
+      <p>해양분자생태학 연구실은 ...</p>
+      <button>More</button>
+    </div>
   </div>
-</div>
 
   <div class="cards" id="research">
     <div class="card" onclick="location.href='research.html'">
@@ -245,8 +312,8 @@
       currentImage = (currentImage + 1) % heroImages.length;
     }
 
-    updateHeroBackground(); // 초기 설정
-    setInterval(updateHeroBackground, 7000); // 7초마다 변경
+    updateHeroBackground();
+    setInterval(updateHeroBackground, 7000);
   </script>
 </body>
 </html>
