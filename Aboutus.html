@@ -1,10 +1,9 @@
-<!-- gallery.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gallery | Marine Molecular Ecology LAB</title>
+  <title>Members | Marine Molecular Ecology LAB</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -50,25 +49,51 @@
       color: #007bff;
     }
 
-    .gallery {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 80px 20px;
+    .member-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 30px;
       justify-content: center;
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
     }
 
-    .gallery img {
-      width: 280px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .member-card {
+      width: 240px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      padding: 20px;
+      text-align: center;
       transition: transform 0.3s ease;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
+    .member-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .member-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .member-card h3 {
+      margin: 16px 0 4px;
+      font-size: 18px;
+    }
+
+    .member-card .title {
+      font-size: 14px;
+      color: #007bff;
+      margin-bottom: 8px;
+    }
+
+    .member-card .desc {
+      font-size: 14px;
+      color: #555;
     }
 
     footer {
@@ -77,6 +102,7 @@
       background-color: #f8f9fa;
       color: #666;
       font-size: 14px;
+      padding: 30px;
     }
   </style>
 </head>
@@ -91,11 +117,25 @@
     </ul>
   </nav>
 
-  <div class="gallery">
-    <img src="https://via.placeholder.com/280x180.png?text=Lab+Work" alt="Lab work" />
-    <img src="https://via.placeholder.com/280x180.png?text=Field+Trip" alt="Field trip" />
-    <img src="https://via.placeholder.com/280x180.png?text=Sampling" alt="Sampling" />
-    <img src="https://via.placeholder.com/280x180.png?text=Team+Photo" alt="Team photo" />
+  <div class="member-grid">
+    <div class="member-card">
+      <img src="https://via.placeholder.com/240x240.png?text=Buomsup+Shim" alt="Buomsup Shim">
+      <h3>Buomsup Shim</h3>
+      <p class="title">Ph.D. Student</p>
+      <p class="desc">Specializes in marine molecular ecology, eDNA, and biodiversity.</p>
+    </div>
+    <div class="member-card">
+      <img src="https://via.placeholder.com/240x240.png?text=Heamin+Yoon" alt="Heamin Yoon">
+      <h3>Heamin Yoon</h3>
+      <p class="title">Master's Student</p>
+      <p class="desc">Epigenetics, Zooplankton, Microalgae, Macroalgae.</p>
+    </div>
+    <div class="member-card">
+      <img src="https://via.placeholder.com/240x240.png?text=Jun+Hyeon+An" alt="Jun Hyeon An">
+      <h3>Jun Hyeon An</h3>
+      <p class="title">Master's Student</p>
+      <p class="desc">Marine medaka and toxicology research.</p>
+    </div>
   </div>
 
   <footer>
