@@ -1,0 +1,105 @@
+<!-- gallery.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery | Marine Molecular Ecology LAB</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #fff;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav, footer {
+      background-color: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      font-size: 16px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      transform: scale(1.1);
+      color: #007bff;
+    }
+
+    .gallery {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      justify-content: center;
+      border-top: 1px solid #ddd;
+      background-color: #f8f9fa;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">MME LAB</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="team.html">Members</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="gallery">
+    <img src="https://via.placeholder.com/280x180.png?text=Lab+Work" alt="Lab work" />
+    <img src="https://via.placeholder.com/280x180.png?text=Field+Trip" alt="Field trip" />
+    <img src="https://via.placeholder.com/280x180.png?text=Sampling" alt="Sampling" />
+    <img src="https://via.placeholder.com/280x180.png?text=Team+Photo" alt="Team photo" />
+  </div>
+
+  <footer>
+    &copy; 2025 Marine Molecular Ecology Lab. All rights reserved.
+  </footer>
+</body>
+</html>
