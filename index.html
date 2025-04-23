@@ -13,6 +13,10 @@
       --gray-color: #555;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -55,6 +59,13 @@
       color: var(--text-color);
       font-weight: 500;
       font-size: 16px;
+      transition: transform 0.3s ease, color 0.3s ease;
+      display: inline-block;
+    }
+
+    nav ul li a:hover {
+      transform: scale(1.1);
+      color: var(--accent-color);
     }
 
     .hero {
@@ -169,28 +180,28 @@
     </ul>
   </nav>
 
-  <div class="hero">
+  <div class="hero" id="intro">
     <h1>Marine Molecular Ecology Lab</h1>
     <p>저희 해양분자생태학 연구실은 해양생물의 유전자, 전사체, 후성유전체, 마이크로바이옴 등 다양한 분자적 특성을 이용하여 기후변화 및 환경오염이 해양생태계에 끼치는 생태학적, 진화적, 생리적 영향을 규명하는 연구를 진행하고 있습니다.</p>
     <button onclick="document.getElementById('intro').scrollIntoView({behavior: 'smooth'});">더 알아보기</button>
   </div>
 
-  <div class="cards">
+  <div class="cards" id="research">
     <div class="card" onclick="location.href='research.html'">
       <img src="/mnt/data/81481cae-f722-464a-849d-c19a0ba9e430.png" alt="Research">
       <div class="card-title">Research</div>
     </div>
-    <div class="card" onclick="location.href='team.html'">
+    <div class="card" id="members" onclick="location.href='team.html'">
       <img src="/mnt/data/6c481a65-d6e7-40e6-a571-f9b1b6de5315.png" alt="Members">
       <div class="card-title">Members</div>
     </div>
-    <div class="card" onclick="location.href='contact.html'">
+    <div class="card" id="contact" onclick="location.href='contact.html'">
       <img src="https://via.placeholder.com/300x200/007bff/ffffff?text=Contact+Us" alt="Contact us">
       <div class="card-title">Contact us</div>
     </div>
   </div>
 
-  <footer>
+  <footer id="gallery">
     <p>&copy; 2024 Marine Molecular Ecology Lab.</p>
     <a href="#">Facebook</a>
     <a href="#">Twitter</a>
