@@ -76,6 +76,11 @@
     .hero {
       text-align: center;
       padding: 150px 20px 80px;
+      background-size: cover;          /* 🎯 */
+      background-position: center;     /* 🎯 */
+      background-repeat: no-repeat;    /* 🎯 */
+      transition: background-image 1.5s ease-in-out;  /* 🎯 */
+      min-height: 100vh;               /* 🎯 */
     }
 
     .hero h1 {
@@ -214,6 +219,7 @@
   </footer>
 
   <script>
+    // 네비게이션 스크롤 시 배경 활성화
     window.addEventListener('scroll', function () {
       const nav = document.getElementById('navbar');
       if (window.scrollY > 10) {
@@ -222,6 +228,23 @@
         nav.classList.remove('scrolled');
       }
     });
+
+    // 🎯 배경 이미지 자동 전환
+    const heroImages = [
+      'images/1.jpg',
+      'images/2.jpg'
+    ];
+
+    let currentImage = 0;
+    const heroSection = document.querySelector('.hero');
+
+    function updateHeroBackground() {
+      heroSection.style.backgroundImage = `url('${heroImages[currentImage]}')`;
+      currentImage = (currentImage + 1) % heroImages.length;
+    }
+
+    updateHeroBackground(); // 초기 설정
+    setInterval(updateHeroBackground, 7000); // 7초마다 변경
   </script>
 </body>
 </html>
