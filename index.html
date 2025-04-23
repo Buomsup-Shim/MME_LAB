@@ -53,10 +53,19 @@
       font-weight: bold;
     }
 
+    nav .logo a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     nav ul {
       display: flex;
       gap: 30px;
       list-style: none;
+    }
+
+    nav ul li {
+      position: relative;
     }
 
     nav ul li a {
@@ -73,14 +82,44 @@
       color: var(--accent-color);
     }
 
+    nav ul li .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      min-width: 160px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 1001;
+      border-radius: 8px;
+    }
+
+    nav ul li .dropdown-menu li {
+      padding: 10px 16px;
+      white-space: nowrap;
+    }
+
+    nav ul li .dropdown-menu li a {
+      color: var(--text-color);
+      text-decoration: none;
+      display: block;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    nav ul li:hover .dropdown-menu {
+      display: flex;
+    }
+
     .hero {
       text-align: center;
       padding: 150px 20px 80px;
-      background-size: cover;          /* 🎯 */
-      background-position: center;     /* 🎯 */
-      background-repeat: no-repeat;    /* 🎯 */
-      transition: background-image 1.5s ease-in-out;  /* 🎯 */
-      min-height: 100vh;               /* 🎯 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 1.5s ease-in-out;
+      min-height: 100vh;
     }
 
     .hero h1 {
@@ -180,13 +219,43 @@
 </head>
 <body>
   <nav id="navbar">
-    <div class="logo">MME LAB</div>
+    <div class="logo"><a href="index.html">MME LAB</a></div>
     <ul>
-      <li><a href="Aboutus.html">About us</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="team.html">Members</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
+      <li class="dropdown">
+        <a href="Aboutus.html">About us</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">History</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="research.html">Research</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Publications</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="team.html">Members</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Faculty</a></li>
+          <li><a href="#">Students</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="contact.html">Contact</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Location</a></li>
+          <li><a href="#">Inquiries</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="gallery.html">Gallery</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Photos</a></li>
+          <li><a href="#">Videos</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -198,55 +267,53 @@
   </div>
 </div>
 
-  <div class="cards" id="research">
-    <div class="card" onclick="location.href='research.html'">
-      <img src="/mnt/data/81481cae-f722-464a-849d-c19a0ba9e430.png" alt="Research">
-      <div class="card-title">Research</div>
-    </div>
-    <div class="card" id="members" onclick="location.href='team.html'">
-      <img src="/mnt/data/6c481a65-d6e7-40e6-a571-f9b1b6de5315.png" alt="Members">
-      <div class="card-title">Members</div>
-    </div>
-    <div class="card" id="contact" onclick="location.href='contact.html'">
-      <img src="https://via.placeholder.com/300x200/007bff/ffffff?text=Contact+Us" alt="Contact us">
-      <div class="card-title">Contact us</div>
-    </div>
+<div class="cards" id="research">
+  <div class="card" onclick="location.href='research.html'">
+    <img src="/mnt/data/81481cae-f722-464a-849d-c19a0ba9e430.png" alt="Research">
+    <div class="card-title">Research</div>
   </div>
+  <div class="card" id="members" onclick="location.href='team.html'">
+    <img src="/mnt/data/6c481a65-d6e7-40e6-a571-f9b1b6de5315.png" alt="Members">
+    <div class="card-title">Members</div>
+  </div>
+  <div class="card" id="contact" onclick="location.href='contact.html'">
+    <img src="https://via.placeholder.com/300x200/007bff/ffffff?text=Contact+Us" alt="Contact us">
+    <div class="card-title">Contact us</div>
+  </div>
+</div>
 
-  <footer id="gallery">
-    <p>&copy; 2024 Marine Molecular Ecology Lab.</p>
-    <a href="#">Facebook</a>
-    <a href="#">Twitter</a>
-    <a href="#">Instagram</a>
-  </footer>
+<footer id="gallery">
+  <p>&copy; 2024 Marine Molecular Ecology Lab.</p>
+  <a href="#">Facebook</a>
+  <a href="#">Twitter</a>
+  <a href="#">Instagram</a>
+</footer>
 
-  <script>
-    // 네비게이션 스크롤 시 배경 활성화
-    window.addEventListener('scroll', function () {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 10) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-
-    // 배경 이미지 자동 전환
-    const heroImages = [
-      'images/1.jpg',
-      'images/2.jpg'
-    ];
-
-    let currentImage = 0;
-    const heroSection = document.querySelector('.hero');
-
-    function updateHeroBackground() {
-      heroSection.style.backgroundImage = url('${heroImages[currentImage]}');
-      currentImage = (currentImage + 1) % heroImages.length;
+<script>
+  // 네비게이션 스크롤 시 배경 활성화
+  window.addEventListener('scroll', function () {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 10) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
     }
+  });
 
-    updateHeroBackground(); // 초기 설정
-    setInterval(updateHeroBackground, 7000); // 7초마다 변경
-  </script>
-</body>
-</html>
+  // 배경 이미지 자동 전환
+  const heroImages = [
+    'images/1.jpg',
+    'images/2.jpg'
+  ];
+
+  let currentImage = 0;
+  const heroSection = document.querySelector('.hero');
+
+  function updateHeroBackground() {
+    heroSection.style.backgroundImage = `url('${heroImages[currentImage]}')`;
+    currentImage = (currentImage + 1) % heroImages.length;
+  }
+
+  updateHeroBackground(); // 초기 설정
+  setInterval(updateHeroBackground, 7000); // 7초마다 변경
+</script>
