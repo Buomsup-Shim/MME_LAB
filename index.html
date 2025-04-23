@@ -104,6 +104,8 @@
       color: var(--text-color);
       text-decoration: none;
       display: block;
+      font-size: 17px; /* 🎯 글씨 크기 증가 */
+      font-weight: 500;
     }
 
     nav ul li:hover .dropdown-menu {
@@ -215,105 +217,4 @@
     }
   </style>
 </head>
-<body>
-  <nav id="navbar">
-    <div class="logo"><a href="index.html">MME LAB</a></div>
-    <ul>
-      <li class="dropdown">
-        <a href="Aboutus.html">About us</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Our Mission</a></li>
-          <li><a href="#">History</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="research.html">Research</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Publications</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="team.html">Members</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Faculty</a></li>
-          <li><a href="#">Students</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="contact.html">Contact</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Location</a></li>
-          <li><a href="#">Inquiries</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="gallery.html">Gallery</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Photos</a></li>
-          <li><a href="#">Videos</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-
-  <div class="hero" id="intro">
-    <div class="hero-content">
-      <h1>Marine Molecular Ecology Lab</h1>
-      <p>해양분자생태학 연구실은 ...</p>
-      <button>More</button>
-    </div>
-  </div>
-
-  <div class="cards" id="research">
-    <div class="card" onclick="location.href='research.html'">
-      <img src="/mnt/data/81481cae-f722-464a-849d-c19a0ba9e430.png" alt="Research">
-      <div class="card-title">Research</div>
-    </div>
-    <div class="card" id="members" onclick="location.href='team.html'">
-      <img src="/mnt/data/6c481a65-d6e7-40e6-a571-f9b1b6de5315.png" alt="Members">
-      <div class="card-title">Members</div>
-    </div>
-    <div class="card" id="contact" onclick="location.href='contact.html'">
-      <img src="https://via.placeholder.com/300x200/007bff/ffffff?text=Contact+Us" alt="Contact us">
-      <div class="card-title">Contact us</div>
-    </div>
-  </div>
-
-  <footer id="gallery">
-    <p>&copy; 2024 Marine Molecular Ecology Lab.</p>
-    <a href="#">Facebook</a>
-    <a href="#">Twitter</a>
-    <a href="#">Instagram</a>
-  </footer>
-
-  <script>
-    // 네비게이션 스크롤 시 배경 활성화
-    window.addEventListener('scroll', function () {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 10) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-
-    // 배경 이미지 자동 전환
-    const heroImages = [
-      'images/1.jpg',
-      'images/2.jpg'
-    ];
-
-    let currentImage = 0;
-    const heroSection = document.querySelector('.hero');
-
-    function updateHeroBackground() {
-      heroSection.style.backgroundImage = `url('${heroImages[currentImage]}')`;
-      currentImage = (currentImage + 1) % heroImages.length;
-    }
-
-    updateHeroBackground();
-    setInterval(updateHeroBackground, 7000);
-  </script>
-</body>
-</html>
+<body> ...
